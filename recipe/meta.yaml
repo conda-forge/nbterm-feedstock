@@ -26,7 +26,7 @@ requirements:
     - typer
     - pygments
     - rich
-    - kernel_driver
+    - kernel_driver >=0.0.6
 
 test:
   commands:
