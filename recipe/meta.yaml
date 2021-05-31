@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - nbterm = nbterm.nbterm:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -24,6 +24,7 @@ requirements:
     - python >=3.7
     - prompt-toolkit >=3.0.16
     - typer
+    - click <8
     - pygments
     - rich
     - kernel_driver >=0.0.6
