@@ -1,5 +1,5 @@
 {% set name = "nbterm" %}
-{% set version = "0.0.12" %}
+{% set version = "0.0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b94511bb851e10ae0552c09cf7eed3537bcf87cf9b4260ad9bc311882a981607
+  sha256: 99b080c86b6a5121dc4f7333c4bbd89fc5fedc4af8372892ea6d8e396303cf2d
 
 build:
   noarch: python
