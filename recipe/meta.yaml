@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 99b080c86b6a5121dc4f7333c4bbd89fc5fedc4af8372892ea6d8e396303cf2d
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - nbterm = nbterm.nbterm:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,9 +19,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - prompt-toolkit >=3.0.16
     - typer >=0.4.0
     - pygments
@@ -29,6 +29,8 @@ requirements:
     - kernel_driver >=0.0.6
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - nbterm --help
 
